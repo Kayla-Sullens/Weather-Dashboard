@@ -5,7 +5,7 @@
 }
 
 body {
-    
+
 }
 .header {
     padding: 4px;
@@ -15,6 +15,27 @@ body {
     color: white;
 }
 
-.search {
+.form-container {
+    padding: 10px;
+}
+
+.search-label {
+   font-size: 24px;
+   font-weight: 600;
+}
+
+.search-input {
+    width: 25%;
+    height: 30px;
+    border-color:brown;
+    border-width: thin;
+    padding: 0 15px;
+}
+
+.search-button {
+    padding: 10px 15px;
+}
+
+.results {
     padding: 10px;
 }
