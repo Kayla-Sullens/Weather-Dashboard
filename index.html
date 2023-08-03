@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
     <title>Weather Dashboard</title>
 </head>
 <body>
@@ -16,11 +17,22 @@
         <!--Search Section-->
         <section class="search">
             <!--Search Form-->
-            <h2>Search for a City:</h2>
-            <form class="form-inline" id="search-form">
-                <input type="search" class="form-input" id="city-name">
-                <button type="submit" class="btn btn-search"></button>
-            </form>
+            <div class="form-container">
+                <form id="search-form">
+                    <div class="row m-0">
+                        <label for="search-input" class="search-label">Search for a City:</label>
+                    </div>
+                    <!--Search Input & Button-->
+                    <div class="row m-0">
+                        <div class="col-sm-8 p-0 my-auto">
+                            <input type="text" class="search-input rounded" id="search-input" name="search-input">
+                        </div>
+                        <div class="col-sm-4 p-0">
+                            <button type="submit" class="btn bg-primary rounded search button"></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
             <!--Search History-->
             <ul class="list" id="search-history"></ul>
         </section>
@@ -30,7 +42,12 @@
             <!--Weather Data for City-->
             <div class="card">
                 <div class="card-body">
-
+                    <div class="flex-row">
+                        <h2 class="card-title" id="city-name"></h2>
+                    </div>
+                    <h3 class="card-subtitle" id="city-temperature">Temperature: </h3>
+                    <h3 class="card-subtitle" id="city-wind-speed">Wind Speed: </h3>
+                    <h3 class="card-subtitle" id="city-humidity">Humidity: </h3>
                 </div>
             </div>
 

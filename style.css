@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+}
+.header {
+    padding: 4px;
+    text-align: center;
+    background-image: linear-gradient(
+        to right, turquoise, blue);
+    color: white;
+}
+
+.search {
+    padding: 10px;
+}
