@@ -27,26 +27,77 @@ section {
     padding: 10px;
 }
 
-.search-label {
-   font-size: 24px;
-   font-weight: 600;
-}
-
-.search-input {
+.search {
     width: 25%;
-    height: 30px;
-    border-color:brown;
-    border-width: thin;
-    padding: 0 15px;
+    margin: 10px 20px 0 10px;
+    padding: 10px 0 10px 10px;
+    background-color: #a8d0df;
 }
 
 .search-button {
-    padding: 10px 15px;
+  background-color: #6db4e6; 
+  border-radius: 8px;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.city-list-box {
+    margin-top: 5px;
+}
+
+.city-name {
+    width: 90%;
+}
+
+.search-history {
+
 }
 
 .results {
-    padding: 10px;
+    width: 75%;
+    padding-bottom: 10px;
+    visibility: hidden;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.card {
+    border: 1px solid #d19dd8;
+    border-right: none;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+}
+
+.forecast {
+    padding-top: 40px;
+}
+
+.container {
+    display: inline;
+}
+
+.card-header,
+.card-body {
+    text-align: center;
+}
+
+.card-header {
+    background-color: rgb(113, 113, 234);
+    color: white;
+}
+
+.card-body {
+    background-color: rgb(113, 175, 196);
+}
+
 
 @media screen and (max-width: 575px) {
     .search-input {
