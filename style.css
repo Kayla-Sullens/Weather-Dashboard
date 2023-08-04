@@ -5,7 +5,15 @@
 }
 
 body {
+    margin: 5px;
+}
 
+main {
+    display: flex;
+}
+
+section {
+    margin-top: 10px;
 }
 .header {
     padding: 4px;
@@ -38,4 +46,27 @@ body {
 
 .results {
     padding: 10px;
+}
+
+@media screen and (max-width: 575px) {
+    .search-input {
+        width: 40%;
+    }
+
+    .search-button {
+        margin-left: 0px;
+    }
+
+    .search-panel h3 {
+        font-size: 15px;
+    }
+
+    .form-row {
+        display: block;
+        text-align: center;
+    }
+
+    .results {
+        width: 60%;
+    }
 }
