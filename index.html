@@ -15,7 +15,7 @@
     <main>
 
         <!--Search Section-->
-        <section class="search">
+        <section class="search-history">
             <!--Search Form-->
             <div class="form-container">
                 <form id="search-form">
@@ -34,81 +34,64 @@
                 </form>
             </div>
             <!--Search History-->
-            <div class="city-list-box">
-            <ul class="list-group" id="search-history"></ul>
+            <div class="city-list-box" id="city-list-box">
+            
             </div>
         </section>
 
         <!--Results Section-->
-        <section class="results">
+        <section id="results">
             <!--Weather Data for City-->
             <div class="card">
                 <div class="card-body">
-                    <div class="flex-row">
-                        <h2 class="card-title" id="city-name"></h2>
-                    </div>
-                    <h3 class="card-subtitle" id="city-temperature">Temperature: </h3>
-                    <h3 class="card-subtitle" id="city-wind-speed">Wind Speed: </h3>
-                    <h3 class="card-subtitle" id="city-humidity">Humidity: </h3>
+                    <h2 class="card-title" id="card-title"></h2>
+                    <img class="d-inline" id="current-weather-icon">
+                    <p class="city-temperature" id="city-temperature">Temperature: </h3>
+                    <p class="city-wind-speed" id="city-wind-speed">Wind Speed: </h3>
+                    <p class="city-humidity" id="city-humidity">Humidity: </h3>
                 </div>
             </div>
 
             <!--5-Day Forecast-->
-            <div class="forecast">
-                <h4>5-Day Forecast:</h4>
-                <div class="container">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 id="day-0"></h5>
-                        </div>
-                        <div class="card-body">
-                            <img src="" alt="" id="img-0">
-                            <p class="card-text" id="temp-0"></p>
-                            <p class="card-text" id="wind-0"></p>
-                            <p class="card-text" id="hum-0"></p>
-                        </div>
+            <div class="future-forecast-container row d-block">
+                <!-- 5 day forecast title-->
+                <h2 class="future-forecast-title" id="future-forecast-title"></h2>
+                <div id="forecasts-cards-container" class="forecasts-cards-container d-flex justify-content-between">
+                    <!-- 5-Day forecast cards -->
+                    <div class="future-card bg-primary rounded">
+                        <p class="future-date" id="date-1"></p>
+                        <img id="future-icon-1" src="" alt="">
+                        <p class="future-temp" id="temp-1"></p>
+                        <p class="future-wind" id="wind-1"></p>
+                        <p class="future-humidity" id="humidity-1"></p>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 id="day-1"></h5>
-                        </div>
-                        <div class="card-body">
-                            <img src="" alt="" id="img-1">
-                            <p class="card-text" id="temp-1"></p>
-                            <p class="card-text" id="wind-0"></p>
-                            <p class="card-text" id="hum-1"></p>
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 id="day-2"></h5>
-                        </div>
-                        <div class="card-body">
-                            <img src="" alt="" id="img-2">
-                            <p class="card-text" id="temp-2"></p>
-                            <p class="card-text" id="wind-0"></p>
-                            <p class="card-text" id="hum-2"></p>
-                        </div>
+                    <div class="future-card bg-primary rounded">
+                        <p class="future-date" id="date-2"></p>
+                        <img id="future-icon-2" src="" alt="">
+                        <p class="future-temp" id="temp-2"></p>
+                        <p class="future-wind" id="wind-2"></p>
+                        <p class="future-humidity" id="humidity-2"></p>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 id="day-3"></h5>
-                        </div>
-                        <div class="card-body">
-                            <img src="" alt="" id="img-3">
-                            <p class="card-text" id="temp-3"></p>
-                            <p class="card-text" id="wind-0"></p>
-                            <p class="card-text" id="hum-3"></p>
-                        </div>
+                    <div class="future-card bg-primary rounded">
+                        <p class="future-date" id="date-3"></p>
+                        <img id="future-icon-3" src="" alt="">
+                        <p class="future-temp" id="temp-3"></p>
+                        <p class="future-wind" id="wind-3"></p>
+                        <p class="future-humidity" id="humidity-3"></p>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 id="day-4"></h5>
-                        </div>
-                        <div class="card-body">
-                            <img src="" alt="" id="img-4">
-                            <p class="card-text" id="temp-4"></p>
-                            <p class="card-text" id="wind-0"></p>
-                            <p class="card-text" id="hum-4"></p>
-                        </div>
+                    <div class="future-card bg-primary rounded">
+                        <p class="future-date" id="date-4"></p>
+                        <img id="future-icon-4" src="" alt="">
+                        <p class="future-temp" id="temp-4"></p>
+                        <p class="future-wind" id="wind-4"></p>
+                        <p class="future-humidity" id="humidity-4"></p>
+                    </div>
+                    <div class="future-card bg-primary rounded">
+                        <p class="future-date" id="date-5"></p>
+                        <img id="future-icon-5" src="" alt="">
+                        <p class="future-temp" id="temp-5"></p>
+                        <p class="future-wind" id="wind-5"></p>
+                        <p class="future-humidity" id="humidity-5"></p>
                     </div>
                 </div>
             </div>
