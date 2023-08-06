@@ -15,7 +15,7 @@ var searchHistoryList = function(cityName) {
 
     searchEntryContainer.append(searchHistoryEntry);
 
-    var searchHistoryContainerEl = $("#search-history-container");
+    var searchHistoryContainerEl = $("#city-list-box");
     searchHistoryContainerEl.append(searchEntryContainer);
 
     // Update savedSearches array with previously saved searches
@@ -39,14 +39,14 @@ var displaySearchHistory = function() {
     displaySearchHistory = localStorage.getItem("savedSearches");
 
     // Return false if there is no previous saved searches
-    if (!savedSearchHistory) {
+    if (!savedSearches) {
         return false;
     }
 
-    savedSearchHistory = JSON.parse(savedSearchHistory);
+    savedSearches = JSON.parse(savedSearchesy);
 
-    for (var i = 0; i < savedSearchHistory.length; i++) {
-        searchHistoryList(savedSearchHistory[i]);
+    for (var i = 0; i < savedSearches.length; i++) {
+        searchHistoryList(savedSearches[i]);
     }
 };
 // Fetch and use data from Open Weather current weather Api for the Current Weather Section
@@ -85,7 +85,7 @@ var currentWeatherSection = function(cityName) {
                     cityTemperature.text("Temperature: " + response.city.temp + " \u00B0F");
 
                     // add current wind speed to page
-                    var cityWindSpeed = $("#current-wind-speed");
+                    var cityWindSpeed = $("#city-wind-speed");
                     cityWindSpeed.text("Wind Speed: " + response.city.wind_speed + " MPH");
 
                     // add current humidity to page
@@ -129,7 +129,7 @@ var fiveDayForecastSection = function(cityName) {
                         futureCard.addClass("future-card-details");
 
                         // add date to 5 day forecast
-                        var futureDate = $("#future-date-" + i);
+                        var futureDate = $("#date-" + i);
                         date = moment().add(i, "d").format("M/D/YYYY");
                         futureDate.text(date);
 
@@ -140,16 +140,16 @@ var fiveDayForecastSection = function(cityName) {
                         futureIcon.attr("src", `https://openweathermap.org/img/wn/${futureIconCode}@2x.png`);
 
                         // add temp to 5 day forecast
-                        var futureTemp = $("#future-temp-" + i);
-                        futureTemp.text("Temp: " + response.daily[i].temp.day + " \u00B0F");
+                        var futureTemp = $("#temp-" + i);
+                        futureTemp.text("Temp: " + response.daily[i].temp.day + " F");
 
                         // add wind speed to 5 day forecast
-                        var futureTemp = $("#future-temp-" + i);
-                        futureTemp.text("Temp: " + response.daily[i].temp.day + " \u00B0F");
+                        var futureTemp = $("#wind-" + i);
+                        futureTemp.text("Temp: " + response.daily[i].wind.day + " mph");
 
                         // add humidity to 5 day forecast
-                        var futureHumidity = $("#future-humidity-" + i);
-                        futureHumidity.text("Humidity: " + response.daily[i].humidity + "%");
+                        var futureHumidity = $("#humidity-" + i);
+                        futureHumidity.text("Humidity: " + response.daily[i].humidity + " %");
                     }
                 })
         })
@@ -183,4 +183,4 @@ $("#city-list-box").on("click", "p", function() {
     previousCityClicked.remove();
 });
 
-loadSearchHistory();
+displaySearchHistory();
