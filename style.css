@@ -114,18 +114,37 @@ section {
     height: 80px;
 }
 
-.city-temperature, .city-humidity, .city-wind-speed {
+.city-temperature, 
+.city-humidity, 
+.city-wind-speed {
     margin: 15px 20px;
     font-size: 20px;
 }
 
-.forecast {
-    padding-top: 40px;
+.future-forecast-container {
+    margin: 15px;
 }
 
-.container {
-    display: inline;
+.future-forecast-title {
+    font-size: 24px;
 }
+
+.future-date {
+    font-size: 20px;
+}
+
+.future-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.future-temp,
+.future-wind,
+.future-humidity {
+    font-size: 16px;
+    font-weight: 200;
+}
+
 
 @media screen and (max-width: 575px) {
     .search-input {
@@ -136,7 +155,7 @@ section {
         margin-left: 0px;
     }
 
-    .search-panel h3 {
+    .search-label {
         font-size: 15px;
     }
 
