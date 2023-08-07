@@ -36,21 +36,21 @@ var searchHistoryList = function(cityName) {
 
 // Display saved search history entries in the search history box
 var displaySearchHistory = function() {
-    displaySearchHistory = localStorage.getItem("savedSearches");
+    var savedSearchHistory = localStorage.getItem("savedSearches");
 
     // Return false if there is no previous saved searches
-    if (!savedSearches) {
+    if (!savedSearchHistory) {
         return false;
     }
 
-    savedSearches = JSON.parse(savedSearchesy);
+    savedSearchHistory = JSON.parse(savedSearchHistory);
 
-    for (var i = 0; i < savedSearches.length; i++) {
-        searchHistoryList(savedSearches[i]);
+    for (var i = 0; i < savedSearchHistory.length; i++) {
+        searchHistoryList(savedSearchHistory[i]);
     }
 };
 // Fetch and use data from Open Weather current weather Api for the Current Weather Section
-var currentWeatherSection = function(cityName) {
+var currentWeatherDisplay = function(cityName) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
         .then(function(response) {
             return response.json();
@@ -68,8 +68,8 @@ var currentWeatherSection = function(cityName) {
                     searchHistoryList(cityName);
 
                     // add current weather container with border to page
-                    var resultsContainer = $("#results");
-                    resultsContainer.addClass("results");
+                    var results = $("#results");
+                    results.addClass("results");
 
                     // add city name, date, and weather icon to current weather section title
                     var cardTitle = $("#card-title");
@@ -137,7 +137,8 @@ var fiveDayForecastSection = function(cityName) {
                         var futureIcon = $("#future-icon-" + i);
                         futureIcon.addClass("future-icon");
                         var futureIconCode = response.daily[i].weather[0].icon;
-                        futureIcon.attr("src", `https://openweathermap.org/img/wn/${futureIconCode}@2x.png`);
+                        futureIcon.attr("src", `http://openweathermap.org/img/wn/" + data.daily[i + 1].weather[0].icon + "@2x.png",
+                        temp: data.daily[i + 1].temp.day.toFixed(1),`);
 
                         // add temp to 5 day forecast
                         var futureTemp = $("#temp-" + i);
@@ -168,7 +169,7 @@ $("#search-form").on("submit", function() {
         event.preventDefault();
     } else {
         // if cityName is valid, add it to search history list and display its weather conditions
-        currentWeatherSection(cityName);
+        currentWeatherDisplay(cityName);
         fiveDayForecastSection(cityName);
     }
 });
@@ -176,7 +177,7 @@ $("#search-form").on("submit", function() {
 // Function is called when a search history entry is clicked
 $("#city-list-box").on("click", "p", function() {
     var previousCityName = $(this).text();
-    currentWeatherSection(previousCityName);
+    currentWeatherDisplay(previousCityName);
     fiveDayForecastSection(previousCityName);
 
     var previousCityClicked = $(this);
