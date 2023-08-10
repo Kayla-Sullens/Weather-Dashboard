@@ -70,7 +70,7 @@ section {
     border-radius: 3px;
     margin: 0;
     text-align: left;
-    width: 350px;
+    width: 100px;
     height: 45px;
     line-height: 45px;
     padding: 0 20px;
@@ -78,10 +78,10 @@ section {
 }
 
 .city-name {
-    width: 90%;
+    width: 50%;
 }
 
-.results {
+#results {
     border-color: rgb(134, 177, 233);
     border-width: thin;
     border-style: solid;
@@ -91,14 +91,9 @@ section {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.card {
-    border: 1px solid #d19dd8;
-    display: block;
-}
-
 .card-title {
     font-size: 30px;
-    margin: 10px 10px 15px 15px;
+    
 }
 
 .card-header,
@@ -106,7 +101,7 @@ section {
     text-align: center;
 }
 
-.card-header {
+.card-title {
     background-color: rgb(113, 113, 234);
     color: white;
 }
@@ -114,8 +109,8 @@ section {
 .card-body {
     display: block;
     align-items: center;
-    background-color: rgb(113, 175, 196);
-    padding: 0px;
+    background-color: rgb(129, 195, 217);
+   
 }
 
 .current-weather-icon {
@@ -132,18 +127,32 @@ section {
 
 .future-forecast-container {
     margin: 15px;
+    display: block;
+    align-items: center;
+    background-color: rgb(113, 175, 196);
+    padding: 0px;
 }
 
 .future-forecast-title {
     font-size: 24px;
+    margin: 10px 10px 15px 15px;
 }
 
-.future-card-details {
-    width: 17%;
-    padding: 7px 0 0 7px;
+#forecastWeather {
+    border-color: rgb(134, 177, 233);
+    border-width: thin;
+    border-style: solid;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.future-date {
+.date-1, .date-2, .date33, .date-4, .date-5,
+#temp-1, #temp-2, #temp-3, #temp-4, #temp-5,
+#wind-1, #wind-2, #wind-3, #wind-4, #wind-5,
+#humidity-1, #humidity-2, #humidity-3, #humidity-4, #humidity-5 {
+    margin: 15px 20px;
     font-size: 20px;
 }
 
