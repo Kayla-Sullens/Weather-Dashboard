@@ -68,24 +68,25 @@ var currentWeatherDisplay = function (cityName) {
                     return response.json();
                 })
                 // get data from response and apply them 
-                .then(function ({ list: forecast }) {
-
+                .then(function (data) {
+                console.log(data);
                     currentWeather.innerHTML = `
                         <div class="card-body">
                             <h2 class="card-title" id="card-title">${current.name}</h2>
                             <p class="current-date">${new Date(current.dt*1000).toDateString()}</p>
                             <img class="d-inline" id="current-weather-icon" src="https://openweathermap.org/img/w/${current.weather[0].icon}.png" />
-                            <p class="city-temperature" id="city-temperature">Temperature: ${current.main.temp} </p>
+                            <p class="city-temperature" id="city-temperature">Temperature: ${current.main.temp} F </p>
                             <p class="city-wind-speed" id="city-wind-speed">Wind Speed: ${current.wind.speed} </p>
                             <p class="city-humidity" id="city-humidity">Humidity:${current.main.humidity}</p>
                         </div>`;
 
-                        for(var i;i<forecast.length;i=i+8){
-                            forecastWeather.innerHTML = 
+                        for(var i=0;i<futureCard.length;i++){
+                            //futureCard[i].children[0].textContent = ${new Date(i=.dt*1000).toDateString()};
+                            //futureCard[i].children[1].src = `https://openweathermap.org/img/w/${.weather[i].icon}.png`;
+                            futureCard[i].children[2].textContent = `Temperature: ${data.list[i].main.temp} F`;
+                            futureCard[i].children[3].textContent = `Wind: ${data.list[i].wind.speed} MPH`;
+                            futureCard[i].children[4].textContent = `Humidity: ${data.list[i].main.humidity} %`;
                             
-                           
-                            date = document.querySelector("date-");
-
 
                                             //     <p class="future-date" id="date-1">${new Date(forecast[i].dt*1000).toDateString()}</p>
                                             //     <img id="future-icon-1" src="https://openweathermap.org/img/w/${forecast.weather[0].icon}.png" />
