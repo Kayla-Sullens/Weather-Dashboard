@@ -81,19 +81,11 @@ var currentWeatherDisplay = function (cityName) {
                         </div>`;
 
                         for(var i=0;i<futureCard.length;i++){
-                            //futureCard[i].children[0].textContent = ${new Date(i=.dt*1000).toDateString()};
+                            futureCard[i].children[0].textContent = date = moment().add(i, "d").format("M/D/YYYY");
                             //futureCard[i].children[1].src = `https://openweathermap.org/img/w/${.weather[i].icon}.png`;
                             futureCard[i].children[2].textContent = `Temperature: ${data.list[i].main.temp} F`;
                             futureCard[i].children[3].textContent = `Wind: ${data.list[i].wind.speed} MPH`;
                             futureCard[i].children[4].textContent = `Humidity: ${data.list[i].main.humidity} %`;
-                            
-
-                                            //     <p class="future-date" id="date-1">${new Date(forecast[i].dt*1000).toDateString()}</p>
-                                            //     <img id="future-icon-1" src="https://openweathermap.org/img/w/${forecast.weather[0].icon}.png" />
-                                            //     <p class="future-temp" id="temp-1">${forecast.main.temp}</p>
-                                            //     <p class="future-wind" id="wind-1">${forecast.wind.speed}</p>
-                                            //     <p class="future-humidity" id="humidity-1">${forecast.main.humidity}</p>
-                                            // </div>`};
 
                 };
         });
@@ -135,4 +127,4 @@ $("#city-list-box").on("click", "p", function () {
     previousCityClicked.remove();
 });
 
-//displaySearchHistory();
+displaySearchHistory();
