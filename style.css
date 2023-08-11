@@ -75,10 +75,11 @@ section {
     line-height: 45px;
     padding: 0 20px;
     color: grey;
+    font-size: 12px;
 }
 
 .city-name {
-    width: 50%;
+    width: 30%;
 }
 
 #results {
@@ -137,6 +138,7 @@ section {
     border-color: rgb(134, 177, 233);
     border-width: thin;
     border-style: solid;
+    align-items: center;
 }
 
 .future-forecast-title {
@@ -165,9 +167,10 @@ section {
     text-align: center;
 }
 
-.future-icon {
+#future-icon img {
     width: 60px;
     height: 60px;
+    align-items: center;
 }
 
 .future-temp,

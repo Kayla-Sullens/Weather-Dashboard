@@ -82,7 +82,7 @@ var currentWeatherDisplay = function (cityName) {
 
                         for(var i=0;i<futureCard.length;i++){
                             futureCard[i].children[0].textContent = date = moment().add(i, "d").format("M/D/YYYY");
-                            //futureCard[i].children[1].src = `https://openweathermap.org/img/w/${.weather[i].icon}.png`;
+                            futureCard[i].children[1].src = `https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png`;
                             futureCard[i].children[2].textContent = `Temperature: ${data.list[i].main.temp} F`;
                             futureCard[i].children[3].textContent = `Wind: ${data.list[i].wind.speed} MPH`;
                             futureCard[i].children[4].textContent = `Humidity: ${data.list[i].main.humidity} %`;
