@@ -6,6 +6,7 @@ This challenge was meant to help showcase skills on using the Open Weather Api. 
 
 ## Link
 
-
+https://kayla-sullens.github.io/Weather-Dashboard/
 
 ## Screenshot
+![Weather-Dashboard](https://github.com/Kayla-Sullens/Weather-Dashboard/assets/134717855/f28903f6-df0e-4be6-b9fd-cccf74bb0bfd)
