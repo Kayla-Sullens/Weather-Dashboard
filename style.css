@@ -139,6 +139,7 @@ section {
     border-width: thin;
     border-style: solid;
     align-items: center;
+    display: block;
 }
 
 .future-forecast-title {
