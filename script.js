@@ -46,10 +46,17 @@ var displaySearchHistory = function () {
     }
 
     savedSearchHistory = JSON.parse(savedSearchHistory);
-
+    var ulElement = document.createElement("ul");
+    ulElement.classList.add("past-search");
+    
     for (var i = 0; i < savedSearchHistory.length; i++) {
-        searchHistoryList(savedSearchHistory[i]);
-    }
+        var liElement = document.createElement("li");
+        liElement.innerHTML = "<button type='button' class='city-list-box'></button>";
+        ulElement.appendChild(liElement);
+        }
+
+        savedSearches.appendChild(ulELement);
+    
 };
 
 // Fetch and use data from Open Weather Api.
@@ -90,8 +97,6 @@ var currentWeatherDisplay = function (cityName) {
 
                 };
         });
-
-        
         
         });
     };
@@ -115,8 +120,10 @@ $("#search-form").on("submit", function (event) {
     }
 });
 
+
+
 // Function is called when a search history entry is clicked
-$("#city-list-box").on("click", "p", function () {
+$("#past-search").on("click", function () {
     var previousCityName = $(this).text();
     currentWeatherDisplay(previousCityName);
 
