@@ -46,16 +46,10 @@ var displaySearchHistory = function () {
     }
 
     savedSearchHistory = JSON.parse(savedSearchHistory);
-    var ulElement = document.createElement("ul");
-    ulElement.classList.add("past-search");
     
     for (var i = 0; i < savedSearchHistory.length; i++) {
-        var liElement = document.createElement("li");
-        liElement.innerHTML = "<button type='button' class='city-list-box'></button>";
-        ulElement.appendChild(liElement);
+        searchHistoryList(savedSearchHistory[i]);
         }
-
-        savedSearches.appendChild(ulELement);
     
 };
 
@@ -97,7 +91,7 @@ var currentWeatherDisplay = function (cityName) {
 
                 };
         });
-        
+        searchHistoryList(cityName)
         });
     };
 
@@ -120,10 +114,8 @@ $("#search-form").on("submit", function (event) {
     }
 });
 
-
-
 // Function is called when a search history entry is clicked
-$("#past-search").on("click", function () {
+$("#city-list-box").on("click", "p", function () {
     var previousCityName = $(this).text();
     currentWeatherDisplay(previousCityName);
 
